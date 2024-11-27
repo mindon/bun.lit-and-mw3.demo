@@ -13,7 +13,7 @@
     </style>
   </head>
   <body>
-    <div style="margin-bottom:2rem">
+    <div style="margin-bottom: 2rem">
       <md-filled-button onclick="setLocale('en')">English
       </md-filled-button>
       <md-filled-button onclick="setLocale('zh_CN')">简体中文
@@ -22,36 +22,82 @@
 
     <my-element name="Deno"></my-element>
     <my-element name="Mindon"></my-element>
-  <h1>demos on</h1>
-   <ol>
+    <h1>demos on</h1>
+    <ol>
       <li>typescript with <a href="https://deno.land">deno</a></li>
-      <li><a href="https://github.com/mindon/packup">packup</a> build and serve for browser</li>
-      <li>using lit element from <a href="https://lit.dev">https://lit.dev</a>, with localization</li>
-      <li>shared <a href="https://github.com/material-components/material-web">material-web (material design 3)</a> styles from parent document inside lit-element with xstyles.ts</li>
-      <li> using npm package <strong>npm&gt;:@material/material-color-utilities</strong> to create theme from image area or color with <a href="https://github.com/mindon/packup">packup</a></li>
-   </ol>
-    <div  style="zoom: .2"><img src="./img/browsers.png" data-area="2248,0,562,281" usemap="#themes" /></div>
+      <li>
+        <a href="https://github.com/mindon/packup">packup</a> build and serve
+        for browser
+      </li>
+      <li>
+        using lit element from <a href="https://lit.dev">https://lit.dev</a>,
+        with localization
+      </li>
+      <li>
+        shared <a href="https://github.com/material-components/material-web"
+        >material-web (material design 3)</a> styles from parent document inside
+        lit-element with xstyles.ts
+      </li>
+      <li>
+        using npm package <strong
+        >npm&gt;:@material/material-color-utilities</strong> to create theme
+        from image area or color with <a href="https://github.com/mindon/packup"
+        >packup</a>
+      </li>
+    </ol>
+    <div style="zoom: 0.2">
+      <img
+        src="./img/browsers.png"
+        data-area="2248,0,562,281"
+        usemap="#themes"
+      />
+    </div>
     <map name="themes">
-      <area shape="rect" coords="0,0,562,562" alt="Chrome" href="#0,281,562,281">
-      <area shape="rect" coords="562,0,1124,562" alt="Edge" href="#562,281,562,281">
-      <area shape="rect" coords="1124,0,1686,562" alt="Firefox" href="#1124,0,562,281">
-      <area shape="rect" coords="1686,0,2248,562" alt="Opera" href="#1686,0,562,281">
-      <area shape="rect" coords="2248,0,2810,562" alt="Safari" href="#2248,0,562,281">
+      <area
+        shape="rect"
+        coords="0,0,562,562"
+        alt="Chrome"
+        href="#0,281,562,281"
+      >
+      <area
+        shape="rect"
+        coords="562,0,1124,562"
+        alt="Edge"
+        href="#562,281,562,281"
+      >
+      <area
+        shape="rect"
+        coords="1124,0,1686,562"
+        alt="Firefox"
+        href="#1124,0,562,281"
+      >
+      <area
+        shape="rect"
+        coords="1686,0,2248,562"
+        alt="Opera"
+        href="#1686,0,562,281"
+      >
+      <area
+        shape="rect"
+        coords="2248,0,2810,562"
+        alt="Safari"
+        href="#2248,0,562,281"
+      >
     </map>
   </body>
   <script type="module" src="./my-element.ts"></script>
   <script type="module" src="./theme.ts"></script>
   <!-- <script type="module" src="https://cdn.skypack.dev/@material/web/button/filled-button.js"></script> -->
   <script>
-function applyArea(dom) {
-  const area = dom.getAttribute('href').substr(1);
-  themeFromImage(document.querySelector('img'), area);
-}
+    function applyArea(dom) {
+      const area = dom.getAttribute("href").substr(1);
+      themeFromImage(document.querySelector("img"), area);
+    }
 
-Array.from(document.querySelectorAll('area')).forEach(elm => {
-  elm.addEventListener('click',  (evt) => {
-    applyArea(evt.target);
-  });
-});
+    Array.from(document.querySelectorAll("area")).forEach((elm) => {
+      elm.addEventListener("click", (evt) => {
+        applyArea(evt.target);
+      });
+    });
   </script>
-  </html>
+</html>

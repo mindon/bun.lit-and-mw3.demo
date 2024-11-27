@@ -2,10 +2,10 @@
   "dependencies": {
     "@lit/localize": "^0.12.2",
     "@material/material-color-utilities": "^0.3.0",
-    "three": "^0.170.0",
+    "three": "^0.170.0"
   },
   "devDependencies": {
-    "bun-plugin-html": "^2.2.0",
-    "@lit/localize-tools": "^0.8.0"
+    "@lit/localize-tools": "^0.8.0",
+    "bun-plugin-html": "^2.2.0"
   }
 }

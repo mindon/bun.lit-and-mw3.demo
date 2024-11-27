@@ -20,25 +20,25 @@ const scene = new THREE.Scene();
 const geometry = new THREE.PlaneGeometry(320, 320, 320, 320);
 let plane;
 
-// new THREE.TextureLoader().load("./img/mindon-d77c06b7.png", (t: THREE.Texture) => {
-//   const material = new THREE.MeshPhongMaterial({
-//     wireframe: false,
-//     transparent: true,
-//     side: THREE.DoubleSide,
-//     alphaMap: t,
-//     map: new THREE.TextureLoader().load("./img/mindon-d77c06b7.png", () => {
-//       renderer.render(scene, camera);
-//     }),
-//     displacementMap: t,
-//     displacementScale: 180,
-//     normalMap: t,
-//   }); //  wireframe: true, transparent: true
-//   material.needsUpdate = true;
-//   // const m = new SceneUtils.createMultiMaterialObject(geometry, [a]);
-//   plane = new THREE.Mesh(geometry, material);
-//   scene.add(plane);
-//   renderer.render(scene, camera);
-// });
+new THREE.TextureLoader().load("./img/mindon.png", (t: THREE.Texture) => {
+  const material = new THREE.MeshPhongMaterial({
+    wireframe: false,
+    transparent: true,
+    side: THREE.DoubleSide,
+    alphaMap: t,
+    map: new THREE.TextureLoader().load("./img/mindon.png", () => {
+      renderer.render(scene, camera);
+    }),
+    displacementMap: t,
+    displacementScale: 180,
+    normalMap: t,
+  }); //  wireframe: true, transparent: true
+  material.needsUpdate = true;
+  // const m = new SceneUtils.createMultiMaterialObject(geometry, [a]);
+  plane = new THREE.Mesh(geometry, material);
+  scene.add(plane);
+  renderer.render(scene, camera);
+});
 
 const light = new THREE.AmbientLight(0xffffffff);
 scene.add(light);
