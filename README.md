@@ -30,10 +30,10 @@ update localize imports in **src/locales/*.ts**
 
 how to build with bun?
 ------------
-bun from https://bun.sh is required.
+**bun** from https://bun.sh is required.
 
-**bun-plugin-html** from https://github.com/BjornTheProgrammer/bun-plugin-html is required to pack dist/
-
-`bun i` to install devDependencies
+the **build.ts** for bun is using **bun-plugin-html** from <https://github.com/BjornTheProgrammer/bun-plugin-html>
 
 `bun build.ts` to build production dist/
+
+if failed, run `bun i` and retry.
