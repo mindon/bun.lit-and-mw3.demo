@@ -6,7 +6,6 @@
   },
   "devDependencies": {
     "@lit/localize-tools": "^0.8.0",
-    "bun-plugin-html": "^2.2.0",
-    "sass": "^1.81.0"
+    "bun-plugin-html": "^2.2.1"
   }
 }
