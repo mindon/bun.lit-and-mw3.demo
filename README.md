@@ -5,9 +5,10 @@ modified from **deno** demo with **packup**
 
 ## how to localize with lit-localize?
 
-bun from https://bun.sh is required.
+bun from <https://bun.sh> is required.
 
 `bun i` to use lit-localize tool to extract i18n msg and build l10n msg
+`export PATH=./node_modules/.bin/:$PATH`
 
 add localize imports
 `grep -l 'locales.ts' src/**/*.ts -exec sed -i '' 's$locales.ts[\'"];$\0import {msg,src,localized} from "@lit/localize";' {} \;`
@@ -21,19 +22,10 @@ add localize imports
 remove localize imports
 `grep -l 'locales.ts' src/**/*.ts -exec sed -i '' 's$import {msg,src,localized} from "@lit/localize";$$' {} \;`
 
-update localize imports in **src/locales/*.ts**
-`sed -i '' "s$'@lit/localize'$'https://cdn.skypack.dev/@lit/localize\?dts'$" src/locales/*.ts`
-
 **src/locales.ts** loads relative locale ts, and providing
 **window.setLocale(id)**, **window.getLocale()** and **window.locales**.
 
-## how to build with bun?
-
-**bun** from https://bun.sh is required.
-
-the **build.ts** for bun is using **bun-plugin-html** from
-<https://github.com/BjornTheProgrammer/bun-plugin-html>
-
-`bun build.ts` to build production dist/
+## how to build with biu?
+`biu` to build production dist/
 
 if failed, run `bun i` and retry.

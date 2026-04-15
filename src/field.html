@@ -26,19 +26,30 @@
         max-width: 100%;
       }
     </style>
-    <link rel="stylesheet" href="img/hello.css" />
   </head>
   <body>
     <!-- (img/mindon.png)  (img/kq.jpeg#hash) (img/kq.jpeg?query) (/img/kq.jpeg) -->
     <div>
-      <canvas class="field-fx" data-src="./img/mindon.png" data-rgb="r"></canvas
-      >
-      <canvas class="field-fx" data-src="./img/mindon.png" data-rgb="g"></canvas
-      >
-      <canvas class="field-fx" data-src="./img/mindon.png" data-rgb="b"></canvas
-      >
-      <canvas class="field-fx" data-src="./img/mindon.png" data-rgb="#"></canvas
-      >
+      <canvas
+        class="field-fx"
+        data-src="./img/mindon.png"
+        data-rgb="r"
+      ></canvas>
+      <canvas
+        class="field-fx"
+        data-src="./img/mindon.png"
+        data-rgb="g"
+      ></canvas>
+      <canvas
+        class="field-fx"
+        data-src="./img/mindon.png"
+        data-rgb="b"
+      ></canvas>
+      <canvas
+        class="field-fx"
+        data-src="./img/mindon.png"
+        data-rgb="#"
+      ></canvas>
     </div>
     <a><canvas
         class="field-fx"
@@ -66,10 +77,12 @@
           const img = a.querySelector("img");
           if (img) a.removeChild(img);
           const data = evt.target.result;
-          Array.from(document.querySelectorAll("canvas.field-fx")).forEach((c) => {
-            c.dataset.src = data;
-            c.reload();
-          });
+          Array.from(document.querySelectorAll("canvas.field-fx")).forEach(
+            (c) => {
+              c.dataset.src = data;
+              c.reload();
+            },
+          );
         };
         r.readAsDataURL(files[0]);
       }
@@ -84,7 +97,9 @@
         flinp.click();
       });
       window.addEventListener("field-fx-ready", () => {
-        a.querySelector("canvas").play([{ rgb: "r" }, { rgb: "g" }, { rgb: "b" }, {
+        a.querySelector("canvas").play([{ rgb: "r" }, { rgb: "g" }, {
+          rgb: "b",
+        }, {
           rgb: "#",
         }, { rgb: "*", dur: 1 }]);
 

@@ -1,19 +1,19 @@
-export { localized, msg, str } from "https://cdn.skypack.dev/@lit/localize?dts";
+export { localized, msg, str } from "@lit/localize";
 
-import { configureLocalization } from "https://cdn.skypack.dev/@lit/localize?dts";
+import { configureLocalization } from "@lit/localize";
 
 // @customElement('my-element')
 // @localized() should after @customElement, this order MATTERS!
 
 // prepare
-// npm i @lit/localize
-// npm i -D @lit/localize-tools
+// bun i @lit/localize
+// bun i -D @lit/localize-tools
+// export PATH=./node_modules/.bin/:$PATH
 //
 // step 1. `lit-localize extract` extract msgs (TODO: how to keep xlf translation targets)
 // step 2. update xliff/*.xlf
 // step 3. `lit-localize build` generate src/locales/*.ts
-// step 4. `sed -i '' "s$'@lit/localize'$'https://cdn.skypack.dev/@lit/localize'$" src/locales/*.ts`
-// step 5. `packup build`
+// step 4. `biu`
 import * as zh_CN from "./locales/zh_CN.ts";
 
 const sourceLocale = "en";

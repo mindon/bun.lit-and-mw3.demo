@@ -1,16 +1,9 @@
 // uncomment following to get `lit-localize extract` and `lit-localize build` command work
 // import {str, msg, localized} from '@lit/localize';
 
-// !bundle=/shared/depends
-import type { TemplateResult } from "https://cdn.skypack.dev/lit?dts";
-
 // !bundle=off
-import { css, html, LitElement } from "https://cdn.skypack.dev/lit";
-import {
-  customElement,
-  property,
-  state,
-} from "https://cdn.skypack.dev/lit/decorators";
+import { css, html, LitElement } from "lit";
+import { customElement, property, state } from "lit/decorators.js";
 
 // export {
 //   xstyles,
@@ -44,19 +37,21 @@ export class MyElement extends LitElement {
   `;
 
   @property()
-  name = "World";
+  accessor name = "World";
 
   @property({ type: Number })
-  count = 0;
+  accessor count = 0;
 
   render() {
     return html`
       <h1>${this.sayHello(this.name)}! ${this.count}</h1>
-      <md-filled-button>Deno</md-filled-button>
-      <md-filled-button>Packup</md-filled-button>
-      <md-filled-button @click=${this._onClick}>${
-      msg(str`Click Count: ${this.count}`)
-    }</md-filled-button>
+      <md-filled-button @click="${() =>
+        window.open("https://bun.sh")}">Bun</md-filled-button>
+      <md-filled-button @click="${() =>
+        window.open("https://github.com/mindon/biu")}">biu</md-filled-button>
+      <md-filled-button @click="${this._onClick}">${msg(
+        str`Click Count: ${this.count}`,
+      )}</md-filled-button>
       <slot></slot>
     `;
   }
@@ -71,7 +66,7 @@ export class MyElement extends LitElement {
    * @param name The name to say "Hello" to
    */
   sayHello(name: string): string {
-    return `Hello, ${name}`;
+    return `${msg(str`Hello`)}, ${name}`;
   }
 }
 
