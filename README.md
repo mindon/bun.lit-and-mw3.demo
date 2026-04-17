@@ -26,6 +26,10 @@ remove localize imports
 **window.setLocale(id)**, **window.getLocale()** and **window.locales**.
 
 ## how to build with biu?
+biu is a zero-config, high-performance bundler for HTML files with TypeScript/JavaScript, powered by [Bun](https://bun.sh/).
+
+<https://github.com/mindon/biu>
+
 `biu` to build production dist/
 
-if failed, run `bun i` and retry.
+⚠️ if failed, run `bun i` and retry.
