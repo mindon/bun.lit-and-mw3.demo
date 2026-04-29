@@ -1,3 +1,4 @@
+// use this version instead https://gist.github.com/mindon/b7c2f33ceab1ec26f26655f2b7c8cfd6
 // extract css rules and keyframes from stylesheets
 export const xstyles = function (names: RegExp, kfr: RegExp) {
   const { origin } = globalThis.location;
